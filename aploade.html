@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>regestration</title>
+<style>
+    body{
+        background-image: url(see-wallpapers.jpg);
+        text-align:center; 
+    }
+    form{
+        color: white;
+        margin: 5px;
+        border: 1px solid white;
+width: 300px;
+    }
+   
+</style>
+<script>
+        function Validate() {
+            var password = document.getElementById("txtPassword").value;
+            var confirmPassword = document.getElementById("txtConfirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+        function checkLength(el) {
+            if (el.value.length != 10) {
+              alert("length must be exactly 10 characters")
+            }
+          }
+    </script>
+</head>
+<body>
+    <form>
+        FirstName:
+        <input type="text" ><br><br>
+        LastName:
+        <input type="text" ><br><br>
+        MobileNo:
+        <input type="text" onblur="checkLength(this)" pattern="[789][0-9]{9}" maxlength="10"><span id="mobileno"></span><br><br>
+        EmailId :
+        <input type="Email"><br><br>
+        Password:
+        <input type="password" id="txtPassword" ><br><br>
+        ConfirmPassword:
+        <input type="password" id="txtConfirmPassword"><span id="span"></span><br><br>
+        <input type="file"><br><br>
+
+        <input type="submit" value="submmit" onclick="Validate()">
+        <input type="reset" value="reset">
+    </form>
+</body>
+</html>
